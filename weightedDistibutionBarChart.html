@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.7.0/nv.d3.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.7.0/nv.d3.min.js"></script>
+    </head>
+    <body>
+        
+    <div id="multibarchart"><svg style="width:700px;height:700px;"></svg></div>
+
+
+    <script>
+
+
+
+        data_multibarchart=[{"values": [{"x": -115.2, "y": 0.014619883040935672}, {"x": -105.6, "y": 0.0}, {"x": -96.0, "y": 0.0}, {"x": -86.4, "y": 0.0}, {"x": -76.8, "y": 0.0}, {"x": -67.2, "y": 0.0029239766081871343}, {"x": -57.6, "y": 0.0}, {"x": -48.0, "y": 0.008771929824561403}, {"x": -38.4, "y": 0.0029239766081871343}, {"x": -28.8, "y": 0.005847953216374269}, {"x": -19.2, "y": 0.0}, {"x": -9.6, "y": 0.02046783625730994}, {"x": -0.0, "y": 0.6783625730994152}, {"x": 9.6, "y": 0.12280701754385964}, {"x": 19.2, "y": 0.038011695906432746}, {"x": 28.8, "y": 0.011695906432748537}, {"x": 38.4, "y": 0.014619883040935672}, {"x": 48.0, "y": 0.011695906432748537}, {"x": 57.6, "y": 0.008771929824561403}, {"x": 67.2, "y": 0.0}, {"x": 76.8, "y": 0.005847953216374269}, {"x": 86.4, "y": 0.008771929824561403}, {"x": 96.0, "y": 0.0029239766081871343}, {"x": 105.6, "y": 0.0}, {"x": 115.2, "y": 0.04093567251461988}], "key": "Weighted Sentiment Scores", "yAxis": "1"}];
+
+    nv.addGraph(function() {
+        var chart = nv.models.multiBarChart();
+chart.xAxis 
+ .axisLabel('Weighted Sentiment Score') 
+ chart.yAxis  
+ .axisLabel('Relative Frequency') 
+        chart.margin({top: 30, right: 60, bottom: 60, left: 60});
+
+        var datum = data_multibarchart;
+
+
+
+
+            chart.yAxis
+                .tickFormat(d3.format(',.2f'));
+            chart.xAxis
+                .tickFormat(d3.format(',.2f'));
+
+
+      chart.showLegend(true);
+
+
+
+        
+
+
+        d3.select('#multibarchart svg')
+            .datum(datum)
+            .transition().duration(500)
+            .attr('width', 700)
+            .attr('height', 700)
+            .call(chart);
+
+
+    });
+
+
+
+
+    </script>
+
+    </body>
+</html>

@@ -1,0 +1,14 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+README.txt
+setup.cfg
+setup.py
+additional_resources/hutto_ICWSM_2014.tar.gz
+vaderSentiment/__init__.py
+vaderSentiment/vaderSentiment.py
+vaderSentiment/vader_sentiment_lexicon.txt
+vaderSentiment.egg-info/PKG-INFO
+vaderSentiment.egg-info/SOURCES.txt
+vaderSentiment.egg-info/dependency_links.txt
+vaderSentiment.egg-info/top_level.txt
